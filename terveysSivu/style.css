@@ -1,0 +1,635 @@
+/* Perusväripaletti ja muuttujat */
+:root {
+    --dark-bg: #2E3440;
+    --dark-accent: #3B4252;
+    --accent-pink: #FF87AB;
+    --accent-pink-light: #FFC0CB;
+    --accent-teal: #5EEAD4;
+    --text-light: #ECEFF4;
+    --text-dark: #2E3440;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+  }
+  
+  /* Perustyylimäärittelyt */
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  }
+  
+  code, pre {
+    font-family: 'Fira Code', monospace;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  
+  .section-title::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background: var(--accent-pink);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .section-padding {
+    padding: 2rem 0;
+  }
+  
+  /* Navbar-määrittelyt */
+  .navbar {
+    background-color: var(--dark-accent) !important;
+    box-shadow: var(--shadow);
+    padding: 1rem 2rem;
+  }
+  
+  .navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--text-light) !important;
+  }
+  
+  .nav-link {
+    color: var(--text-light) !important;
+    margin: 0 0.5rem;
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: var(--accent-pink) !important;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--accent-pink);
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .navbar-toggler {
+    border-color: var(--accent-pink-light);
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 135, 171, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  /* Hero-osio */
+  .hero {
+    min-height: 80vh;
+    background-color: var(--dark-accent);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(46, 52, 64, 0.7), rgba(59, 66, 82, 0.4));
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    opacity: 0.9;
+  }
+  
+  .hero-img {
+    border-radius: 10px;
+    border: 5px solid var(--accent-pink);
+    box-shadow: 0 0 20px rgba(255, 135, 171, 0.6);
+    transition: var(--transition);
+    max-height: 600px;
+  }
+  
+  .hero-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(255, 135, 171, 0.8);
+  }
+  
+  /* primary button */
+  .btn-primary {
+    background-color: var(--accent-pink);
+    border-color: var(--accent-pink);
+    color: var(--text-dark);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: var(--transition);
+  }
+  
+  .btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-pink);
+    border-color: var(--accent-pink);
+    transform: translateY(-3px);
+  }
+  
+  /* btn-outline-light napeille */
+  .btn-outline-light {
+    color: var(--accent-teal);
+    border-color: var(--accent-teal);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: var(--transition);
+  }
+  
+  .btn-outline-light:hover {
+    background-color: var(--accent-teal);
+    color: var(--text-dark);
+    transform: translateY(-3px);
+    border-color: var(--accent-teal);
+  }
+  
+  /* Info Cards */
+  .info-card {
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .info-card-bp {
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 350px;
+  }
+
+  .info-card-bp:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .info-card-title {
+    color: var(--accent-pink);
+    margin-bottom: 1rem;
+  }
+  
+  .info-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .info-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .info-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .info-list li i {
+    color: var(--accent-teal);
+    margin-right: 10px;
+  }
+  
+  /* Terveys-infografiikka */
+  .health-chart {
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .bp-range {
+    display: flex;
+    margin-bottom: 1.5rem;
+    position: relative;
+    height: 60px;
+  }
+  
+  .bp-segment {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-dark);
+    font-weight: 600;
+    position: relative;
+  }
+  
+  .bp-segment:first-child {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  .bp-segment:last-child {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  
+  .bp-low {
+    background-color: #81ECEC;
+  }
+  
+  .bp-normal {
+    background-color: #55EFC4;
+  }
+  
+  .bp-elevated {
+    background-color: #FFEAA7;
+  }
+  
+  .bp-high1 {
+    background-color: #FAB1A0;
+  }
+  
+  .bp-high2 {
+    background-color: #FF7675;
+  }
+  
+  .bp-crisis {
+    background-color: #D63031;
+  }
+  
+  /* BMI Calculator */
+  .bmi-calculator {
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .form-control {
+    background-color: var(--dark-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control:focus {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    border-color: var(--accent-pink);
+    box-shadow: 0 0 0 0.25rem rgba(255, 135, 171, 0.25);
+  }
+  
+  /* Workout Journal */
+  .workout-form {
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .workout-history {
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .workout-entry {
+    background-color: var(--dark-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--accent-pink);
+  }
+  
+  .workout-date {
+    color: var(--accent-teal);
+    font-weight: 600;
+  }
+  
+  /* Diet Plans */
+  .diet-plan {
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .meal {
+    background-color: var(--dark-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .meal-title {
+    color: var(--accent-pink);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Exercise Guide */
+  .exercise-card {
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    transition: var(--transition);
+    height: 100%;
+  }
+  
+  .exercise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .exercise-img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .exercise-content {
+    padding: 1.5rem;
+  }
+  
+  .exercise-title {
+    color: var(--accent-pink);
+    margin-bottom: 1rem;
+  }
+  
+  .exercise-category {
+    background-color: rgba(94, 234, 212, 0.2);
+    color: var(--accent-teal);
+    border-radius: 50px;
+    padding: 0.2rem 0.8rem;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  .exercise-steps {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: var(--dark-accent);
+    padding: 3rem 0;
+    text-align: center;
+  }
+  
+  .social-links {
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    margin: 0 0.5rem;
+    transition: var(--transition);
+  }
+  
+  .social-link:hover {
+    background-color: var(--accent-pink);
+    color: var(--text-dark);
+    transform: translateY(-3px);
+  }
+  
+  .copyright {
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+  
+  /* Responsiivisuus */
+  @media (max-width: 992px) {
+    .hero-img {
+      margin-bottom: 2rem;
+      margin-top: 20px;
+    }
+  
+    .hero-content {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .section-padding {
+      padding: 4rem 0;
+    }
+  
+    .hero-title {
+      font-size: 2.5rem;
+    }
+  
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+  
+    .info-card {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  /* Animaatiot */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  [data-aos] {
+    opacity: 0;
+    transition-property: transform, opacity;
+  }
+  
+  [data-aos].aos-animate {
+    opacity: 1;
+  }
+  
+  [data-aos="fade-up"] {
+    transform: translateY(50px);
+  }
+  
+  [data-aos="fade-up"].aos-animate {
+    transform: translateY(0);
+  }
+  
+  /* Table styles */
+  .table {
+    color: var(--text-light);
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .table thead {
+    background-color: var(--dark-bg);
+  }
+  
+  .table th, .table td {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Progress bars */
+  .progress {
+    height: 12px;
+    background-color: var(--dark-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  
+  .progress-bar {
+    background-color: var(--accent-pink);
+    border-radius: 10px;
+  }
+  
+  /* BMI Result Indicator */
+  .bmi-indicator {
+    display: flex;
+    margin-top: 1.5rem;
+    position: relative;
+    height: 30px;
+  }
+  
+  .bmi-segment {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-dark);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .bmi-underweight {
+    background-color: #74B9FF;
+  }
+  
+  .bmi-normal {
+    background-color: #55EFC4;
+  }
+  
+  .bmi-overweight {
+    background-color: #FFEAA7;
+  }
+  
+  .bmi-obese {
+    background-color: #FF7675;
+  }
+  
+  .bmi-marker {
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: #FFF;
+    border: 2px solid var(--text-dark);
+    z-index: 1;
+  }
+  
+  /* Contact Form */
+  .contact-form {
+    background-color: var(--dark-accent);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+  
+  textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  /* Tabs */
+  .nav-tabs {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-tabs .nav-link {
+    color: var(--text-light);
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .nav-tabs .nav-link:hover {
+    border-color: var(--accent-pink);
+  }
+  
+  .nav-tabs .nav-link.active {
+    color: var(--accent-pink);
+    background-color: transparent;
+    border-bottom: 2px solid var(--accent-pink);
+  }
+  
+  .tab-content {
+    padding: 2rem 0;
+  }

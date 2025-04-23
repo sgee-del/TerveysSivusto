@@ -1,0 +1,6 @@
+2025-04-22|Kävely|15|Kevyt|
+2025-04-22|Juoksu|5|Kohtalainen|
+2025-04-23|Juoksu|4|Kevyt|
+2025-04-23|Pyöräily|66|Kevyt|
+2025-04-23|Tanssi|7|Kevyt|
+2025-04-23|Tanssi|7|Kevyt|
